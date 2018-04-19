@@ -1,6 +1,6 @@
 # Define UI for application that draws a histogram
 dashboardPage(
-  dashboardHeader(title = "Basic dashboard"),
+  dashboardHeader(title = "课题组薪资收入分布"),
   dashboardSidebar(),
   dashboardBody(
     # Boxes need to be put in a row (or column)
