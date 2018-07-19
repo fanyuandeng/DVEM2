@@ -64,8 +64,8 @@ server<-shinyServer(function(input, output, session) {
       
       #=============================base data==============================================
       
-      #定义bin
-      ##MOVES2014 bin定义編輯區(不包括Bin1)
+      #瀹氫箟bin
+      ##MOVES2014 bin瀹氫箟绶ㄨ集鍗€(涓嶅寘鎷珺in1)
       Speedminnode<-c(-Inf,0.44704,0.44704,0.44704,0.44704,0.44704,0.44704,11.1760,11.1760,11.1760,11.1760,11.1760,11.1760,11.1760,11.1760,11.1760,22.3520,22.3520,22.3520,22.3520,22.3520,22.3520)
       Speedmaxnode<-c(0.44704,11.1760,11.1760,11.1760,11.1760,11.1760,11.1760,22.3520,22.3520,22.3520,22.3520,22.3520,22.3520,22.3520,22.3520,22.3520,Inf,Inf,Inf,Inf,Inf,Inf)
       VSPminnode<-c(-Inf,-Inf,0,3,6,9,12,-Inf,0,3,6,9,12,18,24,30,-Inf,6,12,18,24,30)
@@ -79,12 +79,12 @@ server<-shinyServer(function(input, output, session) {
       #end
       
       
-      #BIN匹配模板
+      #BIN鍖归厤妯℃澘
       Btable<-data.table(BIN=as.character(paste('bin',1:23, sep = '')),
                          cnt=0)
       #end
       
-      #BIN加权平均函数
+      #BIN鍔犳潈骞冲潎鍑芥暟
       FUNweight<-function(x){weighted.mean(x,subraw$Fweight)}
       
       #end
