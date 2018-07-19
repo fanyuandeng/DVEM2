@@ -45,17 +45,12 @@ ui<-dashboardPage(
                     width = 3
                   ),
                   column(
-                    p("p creates a paragraph of text."),
-                    p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph.", style = "font-family: 'times'; font-si16pt"),
-                    strong("strong() makes bold text."),
-                    em("em() creates italicized (i.e, emphasized) text."),
-                    br(),
-                    code("code displays your text similar to computer code"),
-                    div("div creates segments of text with a similar style. This division of text is all blue because I passed the argument 'style = color:blue' to div", style = "color:blue"),
-                    br(),
-                    p("span does the same thing as div, but it works with",
-                      span("groups of words", style = "color:blue"),
-                      "that appear inside a paragraph."),
+                    p("本软件模型由清华大学环境学院自主开发"),
+                    h3('使用步骤'),
+                    p('1.上传轨迹数据源文件(文件/参数输入->上传数据源)'),
+                    p('2.设置轨迹片段起止时间(文件/参数输入->时间段设置)'),
+                    p('3.填写完整车辆信息(文件/参数输入->输入车辆信息)'),
+                    p('4.查看输出结果'),
                     width = 9
                   )
                 )
