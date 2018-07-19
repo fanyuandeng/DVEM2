@@ -16,7 +16,7 @@ ui<-dashboardPage(
                       font-family: '微软雅黑';
                       font-weight: 500;
                       line-height: 1.1;
-                      color: #fff;
+                      
                       }
                       
                       "))
