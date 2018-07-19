@@ -1,6 +1,6 @@
 ui<-dashboardPage(
   
-  dashboardHeader(title = strong('机动车动态排放模型'),
+  dashboardHeader(title = strong('机动车动态排放模�?'),
                   titleWidth = 300),
   dashboardSidebar(width = 300,
                    sidebarMenu(
@@ -40,17 +40,23 @@ ui<-dashboardPage(
                 box(
                   title = strong('欢迎使用'),
                   width = 200,
-                  p("p creates a paragraph of text."),
-                  p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph.", style = "font-family: 'times'; font-si16pt"),
-                  strong("strong() makes bold text."),
-                  em("em() creates italicized (i.e, emphasized) text."),
-                  br(),
-                  code("code displays your text similar to computer code"),
-                  div("div creates segments of text with a similar style. This division of text is all blue because I passed the argument 'style = color:blue' to div", style = "color:blue"),
-                  br(),
-                  p("span does the same thing as div, but it works with",
-                    span("groups of words", style = "color:blue"),
-                    "that appear inside a paragraph.")
+                  column(
+                    img(src = 'logo.png', width = 200, height = 200),
+                    width = 4
+                  ),
+                  column(
+                    p("p creates a paragraph of text."),
+                    p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph.", style = "font-family: 'times'; font-si16pt"),
+                    strong("strong() makes bold text."),
+                    em("em() creates italicized (i.e, emphasized) text."),
+                    br(),
+                    code("code displays your text similar to computer code"),
+                    div("div creates segments of text with a similar style. This division of text is all blue because I passed the argument 'style = color:blue' to div", style = "color:blue"),
+                    br(),
+                    p("span does the same thing as div, but it works with",
+                      span("groups of words", style = "color:blue"),
+                      "that appear inside a paragraph.")
+                  )
                 )
               )
       ),
@@ -67,7 +73,7 @@ ui<-dashboardPage(
                   title = strong('创建输入数据'),
                   column(width = 3,
                          box(
-                           title = strong('上传数据源'),
+                           title = strong('上传数据�?'),
                            fileInput('SOURCE', label = '格式要求: csv 文件',
                                      width = 300),
                            width = 100,
@@ -79,7 +85,7 @@ ui<-dashboardPage(
                            side = 'left', height = '250px',
                            tabPanel(title = strong('数据总览'),
                                     
-                                    sliderInput('Trange', label = '拖动时间条',
+                                    sliderInput('Trange', label = '拖动时间�?',
                                                 min = as.POSIXct('2016-01-01 01:00:00', tz = 'UTC'), 
                                                 max = as.POSIXct('2018-08-01 23:00:00', tz = 'UTC'), 
                                                 value = as.POSIXct(c('2016-01-01 09:00:00', '2016-01-01 10:00:00'), '%Y-%m-%d %H:%M:%S', tz = 'UTC'), 
@@ -89,11 +95,11 @@ ui<-dashboardPage(
                                                 step = 1)
                                     
                            ),
-                           tabPanel(title = strong('时间段设置'),
+                           tabPanel(title = strong('时间段设�?'),
                                     column(
                                       width = 6,
                                       box(
-                                        title = '1. 开始',
+                                        title = '1. 开�?',
                                         textInput('Tnode1', label = '示例: 2016-01-01 00:00:01'),
                                         width = 100
                                       )
@@ -111,14 +117,14 @@ ui<-dashboardPage(
                            tabPanel(title = strong('输入车辆信息'),
                                     box(
                                       title = '燃料类型',
-                                      selectInput(inputId = 'CarFuel', label = '其他燃料包括天然气、液化石油气等', 
+                                      selectInput(inputId = 'CarFuel', label = '其他燃料包括天然气、液化石油气�?', 
                                                   choices = c('柴油' = '1',
                                                               '汽油' = '2',
                                                               '其他燃料' = '3')),
                                       width = 3
                                     ),
                                     box(
-                                      title = '车辆总质量(吨)',
+                                      title = '车辆总质�?(�?)',
                                       numericInput(inputId = 'CarGVW', label = '可手动输入或通过箭头控件选择',
                                                    value = 1.5, min = 0, max = 200),
                                       width = 3
@@ -126,7 +132,7 @@ ui<-dashboardPage(
                                     box(
                                       title = '排放标准',
                                       selectInput(inputId = 'CarReg', label = '请根据车辆合格证信息选择', 
-                                                  choices = c('国一前' = '0',
+                                                  choices = c('国一�?' = '0',
                                                               '国一' = '1',
                                                               '国二' = '2',
                                                               '国三' = '3',
@@ -136,7 +142,7 @@ ui<-dashboardPage(
                                       width = 3
                                     ),
                                     box(
-                                      title = '里程表读数(km)',
+                                      title = '里程表读�?(km)',
                                       numericInput(inputId = 'CarOdo', label = '可手动输入或通过箭头控件选择',
                                                    value = 40000, min = 0, max = 20000000),
                                       width = 3
@@ -154,7 +160,7 @@ ui<-dashboardPage(
         tabName = 'PDoutput',
         fluidPage(
           column(width = 2,
-                 selectInput('CarPt','污染物',
+                 selectInput('CarPt','污染�?',
                              c('CO','HC','NOx','PM2.5'))),
           plotOutput('plot2', height = 350)
         )
