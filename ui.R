@@ -40,7 +40,7 @@ ui<-dashboardPage(
                 box(
                   title = strong('欢迎使用'),
                   width = 200,
-                  img(src="logo.png", height = 72, width = 72),
+                  img(src="logo.png", height = 200, width = 200),
                   p("p creates a paragraph of text."),
                   p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph.", style = "font-family: 'times'; font-si16pt"),
                   strong("strong() makes bold text."),
