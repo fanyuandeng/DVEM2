@@ -1,19 +1,19 @@
 ui<-dashboardPage(
   
-  dashboardHeader(title = h4(strong('»ùÓÚ³µÁ¾´óÊı¾İµÄ¶Ì¹¤¿öÅÅ·Å·ÖÎöÄ£ĞÍÈí¼ş')),
+  dashboardHeader(title = h4(strong('åŸºäºè½¦è¾†å¤§æ•°æ®çš„çŸ­å·¥å†µæ’æ”¾åˆ†ææ¨¡å‹è½¯ä»¶')),
                   titleWidth = 300),
   dashboardSidebar(width = 300,
                    sidebarMenu(
-                     menuItem(strong("Ê×Ò³"), tabName = 'homepage', selected = TRUE, icon = icon('home')),
-                     menuItem(strong('ÎÄ¼ş/²ÎÊıÊäÈë'), tabName = 'FAinput', icon = icon('gear')),
-                     menuItem(strong('·ÖÎö½á¹ûÊä³ö'), tabName = 'PDoutput', icon = icon('bar-chart-o'))
+                     menuItem(strong("é¦–é¡µ"), tabName = 'homepage', selected = TRUE, icon = icon('home')),
+                     menuItem(strong('æ–‡ä»¶/å‚æ•°è¾“å…¥'), tabName = 'FAinput', icon = icon('gear')),
+                     menuItem(strong('åˆ†æç»“æœè¾“å‡º'), tabName = 'PDoutput', icon = icon('bar-chart-o'))
                    )),
   dashboardBody(
     tags$p(
       tags$style(HTML("
                       
                       p {
-                      font-family: 'Î¢ÈíÑÅºÚ';
+                      font-family: 'å¾®è½¯é›…é»‘';
                       font-weight: 500;
                       line-height: 1.1;
                       color: #fff;
@@ -26,7 +26,7 @@ ui<-dashboardPage(
       tags$style(HTML("
                       
                       strong {
-                      font-family: 'Î¢ÈíÑÅºÚ';
+                      font-family: 'å¾®è½¯é›…é»‘';
                       font-weight: bold;
                       line-height: 1.1;
                       }
@@ -38,7 +38,7 @@ ui<-dashboardPage(
       tabItem(tabName = 'homepage',
               fluidPage(
                 box(
-                  title = strong('»¶Ó­Ê¹ÓÃ'),
+                  title = strong('æ¬¢è¿ä½¿ç”¨'),
                   width = 200,
                   img(src="logo.png", height = 72, width = 72),
                   p("p creates a paragraph of text."),
@@ -59,17 +59,17 @@ ui<-dashboardPage(
       tabItem(tabName = 'FAinput',
               fluidPage(
                 box(
-                  title = strong('ÊÓÍ¼'),
+                  title = strong('è§†å›¾'),
                   width = 300,
                   height = 400,
                   ggvisOutput('plot1')
                 ),
                 box(
-                  title = strong('´´½¨ÊäÈëÊı¾İ'),
+                  title = strong('åˆ›å»ºè¾“å…¥æ•°æ®'),
                   column(width = 3,
                          box(
-                           title = strong('ÉÏ´«Êı¾İÔ´'),
-                           fileInput('SOURCE', label = '¸ñÊ½ÒªÇó: csv ÎÄ¼ş',
+                           title = strong('ä¸Šä¼ æ•°æ®æº'),
+                           fileInput('SOURCE', label = 'æ ¼å¼è¦æ±‚: csv æ–‡ä»¶',
                                      width = 300),
                            width = 100,
                            status = 'primary',
@@ -78,9 +78,9 @@ ui<-dashboardPage(
                   column(width = 9,
                          tabBox(
                            side = 'left', height = '250px',
-                           tabPanel(title = strong('Êı¾İ×ÜÀÀ'),
+                           tabPanel(title = strong('æ•°æ®æ€»è§ˆ'),
                                     
-                                    sliderInput('Trange', label = 'ÍÏ¶¯Ê±¼äÌõ',
+                                    sliderInput('Trange', label = 'æ‹–åŠ¨æ—¶é—´æ¡',
                                                 min = as.POSIXct('2016-01-01 01:00:00', tz = 'UTC'), 
                                                 max = as.POSIXct('2018-08-01 23:00:00', tz = 'UTC'), 
                                                 value = as.POSIXct(c('2016-01-01 09:00:00', '2016-01-01 10:00:00'), '%Y-%m-%d %H:%M:%S', tz = 'UTC'), 
@@ -90,55 +90,55 @@ ui<-dashboardPage(
                                                 step = 1)
                                     
                            ),
-                           tabPanel(title = strong('Ê±¼ä¶ÎÉèÖÃ'),
+                           tabPanel(title = strong('æ—¶é—´æ®µè®¾ç½®'),
                                     column(
                                       width = 6,
                                       box(
-                                        title = '1. ¿ªÊ¼',
-                                        textInput('Tnode1', label = 'Ê¾Àı: 2016-01-01 00:00:01'),
+                                        title = '1. å¼€å§‹',
+                                        textInput('Tnode1', label = 'ç¤ºä¾‹: 2016-01-01 00:00:01'),
                                         width = 100
                                       )
                                     ),
                                     column(
                                       width = 6,
                                       box(
-                                        title = '2.½áÊø',
-                                        textInput('Tnode2', label = 'Ê¾Àı: 2016-01-01 00:00:01'),
+                                        title = '2.ç»“æŸ',
+                                        textInput('Tnode2', label = 'ç¤ºä¾‹: 2016-01-01 00:00:01'),
                                         width = 100
                                       )
                                     )
                                     
                            ),
-                           tabPanel(title = strong('ÊäÈë³µÁ¾ĞÅÏ¢'),
+                           tabPanel(title = strong('è¾“å…¥è½¦è¾†ä¿¡æ¯'),
                                     box(
-                                      title = 'È¼ÁÏÀàĞÍ',
-                                      selectInput(inputId = 'CarFuel', label = 'ÆäËûÈ¼ÁÏ°üÀ¨ÌìÈ»Æø¡¢Òº»¯Ê¯ÓÍÆøµÈ', 
-                                                  choices = c('²ñÓÍ' = '1',
-                                                              'ÆûÓÍ' = '2',
-                                                              'ÆäËûÈ¼ÁÏ' = '3')),
+                                      title = 'ç‡ƒæ–™ç±»å‹',
+                                      selectInput(inputId = 'CarFuel', label = 'å…¶ä»–ç‡ƒæ–™åŒ…æ‹¬å¤©ç„¶æ°”ã€æ¶²åŒ–çŸ³æ²¹æ°”ç­‰', 
+                                                  choices = c('æŸ´æ²¹' = '1',
+                                                              'æ±½æ²¹' = '2',
+                                                              'å…¶ä»–ç‡ƒæ–™' = '3')),
                                       width = 3
                                     ),
                                     box(
-                                      title = '³µÁ¾×ÜÖÊÁ¿(¶Ö)',
-                                      numericInput(inputId = 'CarGVW', label = '¿ÉÊÖ¶¯ÊäÈë»òÍ¨¹ı¼ıÍ·¿Ø¼şÑ¡Ôñ',
+                                      title = 'è½¦è¾†æ€»è´¨é‡(å¨)',
+                                      numericInput(inputId = 'CarGVW', label = 'å¯æ‰‹åŠ¨è¾“å…¥æˆ–é€šè¿‡ç®­å¤´æ§ä»¶é€‰æ‹©',
                                                    value = 1.5, min = 0, max = 200),
                                       width = 3
                                     ),
                                     box(
-                                      title = 'ÅÅ·Å±ê×¼',
-                                      selectInput(inputId = 'CarReg', label = 'Çë¸ù¾İ³µÁ¾ºÏ¸ñÖ¤ĞÅÏ¢Ñ¡Ôñ', 
-                                                  choices = c('¹úÒ»Ç°' = '0',
-                                                              '¹úÒ»' = '1',
-                                                              '¹ú¶ş' = '2',
-                                                              '¹úÈı' = '3',
-                                                              '¹úËÄ' = '4',
-                                                              '¹úÎå' = '5',
-                                                              '¹úÁù' = '6')),
+                                      title = 'æ’æ”¾æ ‡å‡†',
+                                      selectInput(inputId = 'CarReg', label = 'è¯·æ ¹æ®è½¦è¾†åˆæ ¼è¯ä¿¡æ¯é€‰æ‹©', 
+                                                  choices = c('å›½ä¸€å‰' = '0',
+                                                              'å›½ä¸€' = '1',
+                                                              'å›½äºŒ' = '2',
+                                                              'å›½ä¸‰' = '3',
+                                                              'å›½å››' = '4',
+                                                              'å›½äº”' = '5',
+                                                              'å›½å…­' = '6')),
                                       width = 3
                                     ),
                                     box(
-                                      title = 'Àï³Ì±í¶ÁÊı(km)',
-                                      numericInput(inputId = 'CarOdo', label = '¿ÉÊÖ¶¯ÊäÈë»òÍ¨¹ı¼ıÍ·¿Ø¼şÑ¡Ôñ',
+                                      title = 'é‡Œç¨‹è¡¨è¯»æ•°(km)',
+                                      numericInput(inputId = 'CarOdo', label = 'å¯æ‰‹åŠ¨è¾“å…¥æˆ–é€šè¿‡ç®­å¤´æ§ä»¶é€‰æ‹©',
                                                    value = 40000, min = 0, max = 20000000),
                                       width = 3
                                     )),
@@ -155,7 +155,7 @@ ui<-dashboardPage(
         tabName = 'PDoutput',
         fluidPage(
           column(width = 2,
-                 selectInput('CarPt','ÎÛÈ¾Îï',
+                 selectInput('CarPt','æ±¡æŸ“ç‰©',
                              c('CO','HC','NOx','PM2.5'))),
           plotOutput('plot2', height = 350)
         )
