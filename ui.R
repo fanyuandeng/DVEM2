@@ -41,8 +41,8 @@ ui<-dashboardPage(
                   title = strong('欢迎使用'),
                   width = 200,
                   column(
-                    img(src="logo.png", height = 200, width = 200),
-                    width = 4
+                    img(src="logo.png", height = 200, width = 250),
+                    width = 3
                   ),
                   column(
                     p("p creates a paragraph of text."),
@@ -56,7 +56,7 @@ ui<-dashboardPage(
                     p("span does the same thing as div, but it works with",
                       span("groups of words", style = "color:blue"),
                       "that appear inside a paragraph."),
-                    width = 8
+                    width = 9
                   )
                 )
               )
