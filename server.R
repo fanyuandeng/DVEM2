@@ -149,7 +149,7 @@ server<-shinyServer(function(input, output, session) {
       #=============================emission colculate=====================================================
       
       ##ef data
-      EF<-fread('F:/dengfanyuan/drivesoftware/www/mapping.csv', colClasses = c('character','character','character','numeric'))[,c('Index','BIN'):=list(paste0(Index,1), paste0('bin',Bin))][,!c('Bin')]
+      EF<-fread('www/mapping.csv', colClasses = c('character','character','character','numeric'))[,c('Index','BIN'):=list(paste0(Index,1), paste0('bin',Bin))][,!c('Bin')]
       
       ##set pollutant
       
