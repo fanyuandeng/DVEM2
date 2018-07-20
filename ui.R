@@ -1,6 +1,6 @@
 ui<-dashboardPage(
   
-  dashboardHeader(title = h4(strong('基于车辆大数据的短工况排放分析模型软件')),
+  dashboardHeader(title = h4(strong('交通大数据机动车排放分析模型')),
                   titleWidth = 300),
   dashboardSidebar(width = 300,
                    sidebarMenu(
