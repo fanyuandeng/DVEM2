@@ -170,5 +170,5 @@ ui<-dashboardPage(
     )
       ),
  # skin = 'purple'
- skin = 'suberhero'
+ skin = 'black'
       )
