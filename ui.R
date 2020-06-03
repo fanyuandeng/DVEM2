@@ -170,5 +170,5 @@ ui<-dashboardPage(
     )
       ),
  # skin = 'purple'
- theme = shinytheme("superhero")
+ skin = 'suberhero'
       )
