@@ -1,6 +1,6 @@
 ui<-dashboardPage(
   
-#  dashboardHeader(title = h4(strong('交通大数据机动车排放分析模型')),
+  dashboardHeader(title = h4(strong('交通大数据机动车排放分析模型')),
 #  dashboardHeader(title = h4(strong('船舶高分辨率排放清单及分析模型')),                  
                   titleWidth = 300),
   dashboardSidebar(width = 300,
